@@ -4,10 +4,15 @@ import fs from 'fs';
 export class ManagerFs {
     constructor(_file) {
         //...
+        this.file=_file;
     }
-    getData() {
-        //...
+    // setFile (_file){
+    //     this.file=_file;
+    // }
 
+    getData() {
+        const data = fs.readFileSync(this.file);
+        return JSON.parse(data); 
     }
 }
 
